@@ -12,6 +12,8 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="js/products.js"></script>
+   
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -24,11 +26,10 @@
       </div>
     </nav>
     <div class="container p-5">
-      <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 22/08/2021) y Entrega 2 (Fecha de entrega: 05/09/2021).</p>
-        <hr>
-        <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+      <div class="m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
+        <div id="contenedorProductos" class="list-group">
+            
+        </div>  
       </div>
     </div>
     <footer class="text-muted bg-light">
@@ -45,5 +46,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
+    <script>cargarProductos(PRODUCTS_URL);</script>
   </body>
 </html>

@@ -4,3 +4,7 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+
+function logear(){
+    window.location.href = "index.html";
+}

@@ -4,3 +4,29 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
 });
+
+function cargarProductos(url){
+    let container = document.getElementById("contenedorProductos");
+    container.innerHTML = "";
+    fetch(url)
+    .then(response => response.json())
+    .then(datos => {
+        datos.forEach(elemento => {
+            container.innerHTML += `
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">`+ elemento.name +`</h4>
+                            <small class="text-muted">Precio: ` + elemento.cost +   ` ` + elemento.currency + `</small>
+                        </div>
+                        <p class="mb-1 text-left">` + elemento.description + `</p>
+                    </div>
+                </div>
+            </a>
+            `
+        });
+    })
+    .catch("No se ha podido cargar informacion")
+}
+   
