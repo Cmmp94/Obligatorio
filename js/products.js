@@ -17,10 +17,12 @@ function cargarProductos(url){
                 <div class="row">
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ elemento.name +`</h4>
-                            <small class="text-muted">Precio: ` + elemento.cost +   ` ` + elemento.currency + `</small>
-                        </div>
-                        <p class="mb-1 text-left">` + elemento.description + `</p>
+                            <h4 class=""><strong>`+ elemento.name +`</strong></h4>
+                         </div>
+                         <p class="mb-1 text-left">` + elemento.description + `</p>
+                         <div class="text-left">
+                            <strong>Precio: ` + elemento.cost +   ` ` + elemento.currency + `</strong>
+                         </div>   
                     </div>
                 </div>
             </a>
