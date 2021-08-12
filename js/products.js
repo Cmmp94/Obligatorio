@@ -21,7 +21,7 @@ function cargarProductos(url){
                          </div>
                          <p class="mb-1 text-left">` + elemento.description + `</p>
                          <div class="text-left">
-                            <strong>Precio: ` + elemento.cost +   ` ` + elemento.currency + `</strong>
+                            <strong>Precio: ` + elemento.cost + ` ` + elemento.currency + `</strong>
                          </div>   
                     </div>
                 </div>
