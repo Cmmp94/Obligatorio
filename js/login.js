@@ -5,3 +5,9 @@
 function logear(){
     window.location.href = "inicio.html";
 }
+
+function recordarUsuario(){
+    const usuario = document.getElementById("inputEmail").value;
+    localStorage.setItem('username', usuario);
+    alert(localStorage.getItem('username'));
+}

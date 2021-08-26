@@ -13,7 +13,7 @@ function cargarProductos(url){
     .then(datos => {
         datos.forEach(elemento => {
             container.innerHTML += `
-            <a href="#" class="list-group-item list-group-item-action">
+            <a href="#" id="itemDeLista" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
@@ -32,3 +32,9 @@ function cargarProductos(url){
     .catch("No se ha podido cargar informacion")
 }
    
+
+function filter(){
+    const min = document.getElementById("MinFiltro").value;
+    const max = document.getElementById("MaxFiltro").value;
+           
+}

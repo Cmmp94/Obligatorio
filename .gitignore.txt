@@ -1,0 +1,9 @@
+# Object file
+*.o
+
+# Ada Library Information
+*.ali
+
+#video file
+*.mp4
+*.avi

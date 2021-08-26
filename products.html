@@ -25,13 +25,46 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <p id="userCont" class="py-2 d-none d-md-inline-block text-white" href="#"></p>
+      <script>document.getElementById("userCont").innerHTML = localStorage.getItem('username')</script>
     </div>
   </nav>
   <div class="text-center p-4">
     <h2>Productos</h2>
     <p class="lead">Verás aquí todos los productos disponibles en el sitio.</p>
-</div>
+  </div>
+
   <div class="text-center container p-5">
+
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-9 mb-1 container">
+          <div class="row container d-flex p-0 m-0">
+            <div class="col-1">
+              <p class="font-weight-normal text-right my-2">Min:</p>
+            </div>
+            <div class="col-3">
+              <input class="form-control" type="number" placeholder="0" id="MinFiltro">
+            </div>
+            <div class="col-1">
+              <p class="font-weight-normal text-right my-2">Max:</p>
+            </div>
+            <div class="col-3">
+              <input class="form-control" type="number" placeholder="10000" id="MaxFiltro">
+            </div>
+            <div class="col-1 p-0">
+              <div class="btn-group" role="group">
+                <button onclick="filter()" class="btn btn-primary btn-block" id="rangeFilterCount">Filtrar</button> 
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
     <div class="m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
       <div id="contenedorProductos" class="list-group">
 
