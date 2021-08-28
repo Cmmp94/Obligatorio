@@ -37,28 +37,34 @@
   <div class="text-center container p-5">
 
     <div class="row">
-      <div class="col-3"></div>
+      <div class="col-1"></div>
       <div class="col-9 mb-1 container">
-          <div class="row container d-flex p-0 m-0">
-            <div class="col-1">
-              <p class="font-weight-normal text-right my-2">Min:</p>
+        <div class="row container d-flex p-0 m-0">
+          <div class="col-1">
+            <p class="font-weight-normal text-right my-2">Min:</p>
+          </div>
+          <div class="col-2">
+            <input class="form-control" type="number" placeholder="0" id="MinFiltro">
+          </div>
+          <div class="col-1">
+            <p class="font-weight-normal text-right my-2">Max:</p>
+          </div>
+          <div class="col-2">
+            <input class="form-control" type="number" placeholder="50000" id="MaxFiltro">
+          </div>
+          <div class="col-4 p-0">
+            <div class="btn-group d-inline-block" role="group">
+              <button onclick="filter(PRODUCTS_URL)" class="btn btn-primary btn-block"
+                id="rangeFilterCount">Filtrar</button>
             </div>
-            <div class="col-3">
-              <input class="form-control" type="number" placeholder="0" id="MinFiltro">
-            </div>
-            <div class="col-1">
-              <p class="font-weight-normal text-right my-2">Max:</p>
-            </div>
-            <div class="col-3">
-              <input class="form-control" type="number" placeholder="10000" id="MaxFiltro">
-            </div>
-            <div class="col-1 p-0">
-              <div class="btn-group" role="group">
-                <button onclick="filter()" class="btn btn-primary btn-block" id="rangeFilterCount">Filtrar</button> 
+           
+              <div class="btn-group d-inline-block" role="group">
+                <button onclick="limpiarFiltro(PRODUCTS_URL)" class="btn btn-primary btn-block"
+                  id="rangeFilterCount">Limpiar Filtros</button>
               </div>
-            </div>
           </div>
         </div>
+      </div>
     </div>
 
 
