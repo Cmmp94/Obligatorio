@@ -34,48 +34,43 @@
     <p class="lead">Verás aquí todos los productos disponibles en el sitio.</p>
   </div>
 
-  <div class="text-center container p-5">
-
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-9 mb-1 container">
-        <div class="row container d-flex p-0 m-0">
-          <div class="col-1">
-            <p class="font-weight-normal text-right my-2">Min:</p>
-          </div>
-          <div class="col-2">
-            <input class="form-control" type="number" placeholder="0" id="MinFiltro">
-          </div>
-          <div class="col-1">
-            <p class="font-weight-normal text-right my-2">Max:</p>
-          </div>
-          <div class="col-2">
-            <input class="form-control" type="number" placeholder="50000" id="MaxFiltro">
-          </div>
-          <div class="col-4 p-0">
-            <div class="btn-group d-inline-block" role="group">
-              <button onclick="filter(PRODUCTS_URL)" class="btn btn-primary btn-block"
-                id="rangeFilterCount">Filtrar</button>
-            </div>
-           
-              <div class="btn-group d-inline-block" role="group">
-                <button onclick="limpiarFiltro(PRODUCTS_URL)" class="btn btn-primary btn-block"
-                  id="rangeFilterCount">Limpiar Filtros</button>
-              </div>
-          </div>
-        </div>
-      </div>
+    <div class="container col-6 text-center m-auto">
+      <input class="mb-2" type="search" placeholder="Buscar">
     </div>
 
 
 
-
-
-    <div class="m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
-      <div id="contenedorProductos" class="list-group">
-
-      </div>
+    <div class="container col-6 text-center m-auto">
+      <label class="col-1"> Min: </label>
+      <input id="minFiltro" class="col-2" type="number" value="0">
+      <label class="col-1"> Max: </label>
+      <input id="maxFiltro" class="col-2" type="number" value="50000">
+      
+      <button onclick="filtrar(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Filtrar</button>
+      <button onclick="limpiarFiltro(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Limpiar</button>
+      
     </div>
+
+    
+
+    <div class="container col-12 m-auto text-center">
+      <p class="d-inline font-weight-normal text-left my-2">Ordenar por:</p>
+      <select id="ordenSel" class="m-auto col-2 form-select">
+        <option selected value="1">Precio ascendente</option>
+        <option value="2">Precio descendente</option>
+        <option value="3">Relevancia</option>
+      </select>
+      <button onclick="ordenar(PRODUCTS_URL)" class="p-1 btn btn-primary">Ordenar</button>
+    </div>
+  </div>
+
+
+
+  <div class="col-6 m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
+    <div id="contenedorProductos" class="list-group">
+
+    </div>
+  </div>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">
