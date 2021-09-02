@@ -77,6 +77,11 @@ function limpiarFiltros(url){
     mostrarProductos(url);
 }
 
+function limpiarBusqueda(url){
+    document.getElementById("buscador").value = "";
+    mostrarProductos(url);
+}
+
 
 
 
