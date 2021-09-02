@@ -35,7 +35,8 @@
   </div>
 
     <div class="container col-6 text-center m-auto">
-      <input class="mb-2" type="search" placeholder="Buscar">
+      <input class="mb-2" id="buscador" type="text" placeholder="Buscar">
+      <button class="btn btn-primary p-1" onclick="limpiarBusqueda(PRODUCTS_URL)">Limpiar búsqueda</button>
     </div>
 
 
@@ -44,7 +45,7 @@
       <label class="col-1"> Min: </label>
       <input id="minFiltro" class="col-2" type="number" value="0">
       <label class="col-1"> Max: </label>
-      <input id="maxFiltro" class="col-2" type="number" value="50000">
+      <input id="maxFiltro" class="col-2" type="number" value="150000">
       
       <button onclick="filtrar(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Filtrar</button>
       <button onclick="limpiarFiltro(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Limpiar</button>
