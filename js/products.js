@@ -41,6 +41,7 @@ function filtrar(url){
     let min = document.getElementById("minFiltro").value;
     let max = document.getElementById("maxFiltro").value;
     container.innerHTML = "";
+    limpiarBusqueda(url);
 
     fetch(url)
     .then(response => response.json())
@@ -194,6 +195,7 @@ function ordenar(url) {
 function limpiarBusqueda(url){
     document.getElementById("buscador").value = "";
     cargarProductos(url);
+    limpiarFiltro(url);
 }
 
 document.getElementById("buscador").addEventListener("keyup", (e) =>{
