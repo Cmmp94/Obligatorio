@@ -35,8 +35,8 @@
   </div>
 
     <div class="container col-6 text-center m-auto">
-      <input class="mb-2" id="buscador" type="text" placeholder="Buscar">
-      <button class="btn btn-primary p-1" onclick="limpiarBusqueda(PRODUCTS_URL)">Limpiar búsqueda</button>
+      <input onkeyup="mostrarProductos(PRODUCTS_URL)" class="mb-2" id="buscador" type="text" placeholder="Buscar">
+      <button class="btn btn-primary p-1" onclick="mostrarProductos(PRODUCTS_URL)">Limpiar búsqueda</button>
     </div>
 
 
@@ -47,8 +47,8 @@
       <label class="col-1"> Max: </label>
       <input id="maxFiltro" class="col-2" type="number" value="150000">
       
-      <button onclick="filtrar(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Filtrar</button>
-      <button onclick="limpiarFiltro(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Limpiar</button>
+      <button onclick="mostrarProductos(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Filtrar</button>
+      <button onclick="limpiarFiltros(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Limpiar</button>
       
     </div>
 
@@ -61,7 +61,7 @@
         <option value="2">Precio descendente</option>
         <option value="3">Relevancia</option>
       </select>
-      <button onclick="ordenar(PRODUCTS_URL)" class="p-1 btn btn-primary">Ordenar</button>
+      <button onclick="mostrarProductos(PRODUCTS_URL)" class="p-1 btn btn-primary">Ordenar</button>
     </div>
   </div>
 
@@ -94,7 +94,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/products.js"></script>
-  <script>cargarProductos(PRODUCTS_URL);</script>
+  <script>mostrarProductos(PRODUCTS_URL)</script>
 </body>
 
 </html>
