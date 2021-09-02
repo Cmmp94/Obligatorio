@@ -74,6 +74,7 @@ function limpiarFiltro(url) {
 }
 
 function ordenar(url) {
+    limpiarFiltro(url);
     const caso = document.getElementById("ordenSel").value;
     let container = document.getElementById("contenedorProductos");
     switch (caso) {
