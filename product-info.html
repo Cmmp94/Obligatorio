@@ -10,6 +10,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -27,14 +28,43 @@
       <script>document.getElementById("userCont").innerHTML = localStorage.getItem('username')</script>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  
+  <div class="col-6 m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
+    <div class="m-auto"id="contenedorInfo" class="list-group">
+
     </div>
   </div>
+
+  <div class="p-2 col-6 text-left d-block m-auto">
+    
+    <div id="imgContainer" class="col-6 m-auto">
+    </div>
+
+    <div id="infoContainer" class="col-6 d-inline m-auto text-right">
+    </div>
+
+  </div>
+
+  <div id="comentariosContainer" class="p-2 col-6 text-center m-auto">
+    <h5>Comentarios</h5>
+  </div>
+
+  <div class="p-2 col-6 text-center m-auto">
+    <h5>Agrega un comentario</h5>
+    <textarea id="comentarioTexto" style="resize: none;" class="m-auto col-12"></textarea>
+    <p class="d-inline">Valorar:</p>
+    <select id="comentarioCalif" class="form-select form-select-lg mb-3">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <button onclick="agregarComentario()" class="btn btn-primary">Comentar</button>
+  </div>
+
+  
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -44,6 +74,7 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+  
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -52,6 +83,10 @@
       <div></div>
     </div>
   </div>
+
+
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
