@@ -143,7 +143,7 @@ function agregarComentario(){
     let comentario = document.getElementById("comentarioTexto").value;
     let calificacion = document.getElementById("comentarioCalif").value;
     let container = document.getElementById("comentariosContainer");
-    let hora  = new Date().toLocaleString().replace(",","").replace(/:.. /," ");
+    let hora  = new Date().toISOString().split('T')[0];
     
     if(comentario != ""){
         
