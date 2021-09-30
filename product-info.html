@@ -14,6 +14,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -37,15 +39,32 @@
 
   <div class="p-2 col-6 text-left d-block m-auto">
     
-    <div id="imgContainer" class="col-6 m-auto">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" id="imgContainer">
+        
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
-    <div id="infoContainer" class="col-6 d-inline m-auto text-right">
+    <div id="infoContainer" class="col-6 mb-5 d-inline m-auto text-right">
     </div>
+
+    <div id="relacionados" class="col-6 d-inline m-auto text-right">
+      <h4 class="text-center">Productos relacionados</h4>
+    </div>
+
+
 
   </div>
 
-  <div id="comentariosContainer" class="p-2 col-6 text-center m-auto">
+  <div id="comentariosContainer" class="m-5 p-2 col-6 text-center m-auto">
     <h5>Comentarios</h5>
   </div>
 

@@ -4,12 +4,14 @@
 
 let urlInfo = PRODUCT_INFO_URL;
 let urlComentarios = PRODUCT_INFO_COMMENTS_URL;
+let urlProductos = PRODUCTS_URL;
 
 
 document.addEventListener("DOMContentLoaded", function(e){
     let container = document.getElementById("infoContainer");
     let comentarios = document.getElementById("comentariosContainer");
     let imgContainer = document.getElementById("imgContainer");
+    let relatedContainer = document.getElementById("relacionados");
     fetch(urlInfo)
     .then(response => response.json())
     .then(datos =>{
@@ -25,11 +27,35 @@ document.addEventListener("DOMContentLoaded", function(e){
         `
         
         datos.images.forEach(element => {
-            imgContainer.innerHTML+=`
-            <img class="d-inline w-100" src="${element}">            
+            
+            imgContainer.innerHTML+=`    
+            <div class="carousel-item">
+            <img src="${element}" class="d-block w-100" alt="...">
+            </div>
             `
+            imgContainer.firstElementChild.classList.add("active");
         });
 
+        fetch(urlProductos)
+        .then(response => response.json())
+        .then(datosProductos =>{
+
+            datos.relatedProducts.forEach(elemento => {
+                relatedContainer.innerHTML += `
+                
+                <a href="product-info.html" id="itemDeLista" class="list-group-item list-group-item-action">
+                <div class="row">
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class=""><strong>`+ datosProductos[elemento].name + `</strong></h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+                
+                `
+            });
+        })
 
 
         })
