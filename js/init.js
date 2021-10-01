@@ -44,4 +44,18 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  
 });
+
+function logout(){
+  localStorage.removeItem("username");
+  window.location.href = "index.html";
+}
+
+function verPerfil(){
+  window.location.href = "my-profile.html";
+}
+
+function verCarrito(){
+  window.location.href = "cart.html";
+}
