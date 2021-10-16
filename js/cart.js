@@ -68,7 +68,7 @@ function cargarFactura(){
    
 
     subtotalCont.innerHTML = "Subtotal: $" + `${calcularSubtotal()}`;   
-    costoEnvioCont.innerHTML = "Costo de Envío: " + `${calcularEnvio()}`;  
+    costoEnvioCont.innerHTML = "Costo de Envío: $" + `${calcularEnvio()}`;  
     totalCont.innerHTML = "Total: $" + `${calcularSubtotal() + calcularEnvio()}`;
     
 }
