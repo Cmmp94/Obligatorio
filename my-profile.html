@@ -52,25 +52,50 @@
       <script>document.getElementById("userCont").innerHTML = localStorage.getItem('username')</script>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="row justify-content-center">
+    <div id="formulario" class="col-7 mt-5 bg-light border border-dark justify-content-center">
+      <div class="row mt-4">
+        <label class="col-2 mt-2" for="pNombre">Primer Nombre:</label>
+        <input readonly id="pNombre" class="input-group-text m-1" type="text">  
+        <label class="col-2 ml-4 mt-2" for="sNombre">Segundo Nombre:</label>
+        <input readonly id="sNombre" class="input-group-text m-1" type="text">  
+      </div>
+
+      <div class="row">
+        <label class="col-2 mt-2" for="pApellido">Primer Apellido:</label>
+        <input readonly id="pApellido" class="input-group-text m-1" type="text">  
+        <label class="col-2 ml-4 mt-2" for="sApellido">Segundo Apellido:</label>
+        <input readonly id="sApellido" class="input-group-text m-1" type="text">  
+      </div>
+
+      <div class="row">
+        <label class="col-2 mt-2" for="edad">Edad:</label>
+        <input readonly id="edad" class="input-group-text m-1" type="number" min="0">
+      </div>
+
+      <div class="row">
+        <label class="col-2 mt-2" for="email">E-mail:</label>
+        <input readonly id="email" class="input-group-text m-1" type="email" min="0">
+      </div>
+      
+      <div class="row">
+        <label class="col-2 mt-2" for="telefono">Teléfono:</label>
+        <input readonly id="tel" class="input-group-text m-1" type="text" min="0">
+      </div>
+
+
+      <div class="row justify-content-center">
+        <button id="modificar" onclick="modificar()" class="btn btn-dark">Modificar Datos</button>
+      </div>
+      
+      <div class="mb-2 row justify-content-center">
+        
+        <button onclick="confirmar()" id="confirmar" hidden class="col-1 btn btn-primary m-1">Confirmar</button>
+        <button onclick="cancelar()" id="cancelar" hidden class="col-1 btn btn-danger m-1">Cancelar</button>
+      
+      </div>
+
     </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
