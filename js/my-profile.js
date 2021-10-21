@@ -2,28 +2,29 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
-    document.getElementById("pNombre").value = sessionStorage.getItem("primerNombre");
-    document.getElementById("sNombre").value = sessionStorage.getItem("segundoNombre");
-    document.getElementById("pApellido").value = sessionStorage.getItem("primerApellido");
-    document.getElementById("sApellido").value = sessionStorage.getItem("segundoApellido");
-    document.getElementById("edad").value = sessionStorage.getItem("edad");
-    document.getElementById("email").value = sessionStorage.getItem("email");
-    document.getElementById("tel").value = sessionStorage.getItem("tel");
+    document.getElementById("pNombre").value = JSON.parse(sessionStorage.getItem("primerNombre"));
+    document.getElementById("sNombre").value = JSON.parse(sessionStorage.getItem("segundoNombre"));
+    document.getElementById("pApellido").value = JSON.parse(sessionStorage.getItem("primerApellido"));
+    document.getElementById("sApellido").value = JSON.parse(sessionStorage.getItem("segundoApellido"));
+    document.getElementById("edad").value = JSON.parse(sessionStorage.getItem("edad"));
+    document.getElementById("email").value = JSON.parse(sessionStorage.getItem("email"));
+    document.getElementById("tel").value = JSON.parse(sessionStorage.getItem("tel"));
         
 });
 
 function confirmar(){
-    sessionStorage.setItem("primerNombre", document.getElementById("pNombre").value);
-    sessionStorage.setItem("segundoNombre", document.getElementById("sNombre").value);
-    sessionStorage.setItem("primerApellido", document.getElementById("pApellido").value);
-    sessionStorage.setItem("segundoApellido", document.getElementById("sApellido").value);
-    sessionStorage.setItem("edad", document.getElementById("edad").value);
-    sessionStorage.setItem("email", document.getElementById("email").value);
-    sessionStorage.setItem("tel", document.getElementById("tel").value);
+    sessionStorage.setItem("primerNombre", JSON.stringify(document.getElementById("pNombre").value));
+    sessionStorage.setItem("segundoNombre", JSON.stringify(document.getElementById("sNombre").value));
+    sessionStorage.setItem("primerApellido", JSON.stringify(document.getElementById("pApellido").value));
+    sessionStorage.setItem("segundoApellido", JSON.stringify(document.getElementById("sApellido").value));
+    sessionStorage.setItem("edad", JSON.stringify(document.getElementById("edad").value));
+    sessionStorage.setItem("email", JSON.stringify(document.getElementById("email").value));
+    sessionStorage.setItem("tel", JSON.stringify(document.getElementById("tel").value));
     document.getElementById("modificar").removeAttribute("hidden");
     document.getElementById("confirmar").setAttribute("hidden", "true");
     document.getElementById("cancelar").setAttribute("hidden", "true");
     noEditable();
+    alert("se cambio");
 }
 
 function cancelar(){
