@@ -48,14 +48,14 @@
 
 
 
-    <div class="container col-6 text-center m-auto">
+    <div class="container row justify-content-center text-center m-auto">
       <label class="col-1"> Min: </label>
-      <input id="minFiltro" class="col-2" type="number" value="0">
+      <input id="minFiltro" class="col-2 form-field" type="number" value="0">
       <label class="col-1"> Max: </label>
       <input id="maxFiltro" class="col-2" type="number" value="150000">
       
-      <button onclick="mostrarProductos(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Filtrar</button>
-      <button onclick="limpiarFiltros(PRODUCTS_URL)" class="p-1 btn btn-primary col-1">Limpiar</button>
+      <button onclick="mostrarProductos(PRODUCTS_URL)" class="m-1 btn btn-primary col-1">Filtrar</button>
+      <button onclick="limpiarFiltros(PRODUCTS_URL)" class="m-1 btn btn-primary col-1">Limpiar</button>
       
     </div>
 
@@ -74,8 +74,8 @@
 
 
 
-  <div class="col-6 m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
-    <div id="contenedorProductos" class="list-group">
+  <div class="col-8 m-auto text-center" role="alert" style="position: relative; width:auto; top: 0;">
+    <div id="contenedorProductos" class="row m-5">
 
     </div>
   </div>

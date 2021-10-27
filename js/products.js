@@ -46,7 +46,7 @@ function mostrarProductos(url){
             (element.name.toLowerCase().includes(buscar) || element.description.toLowerCase().includes(buscar))){
 
                 container.innerHTML += `
-                <a href="product-info.html" id="itemDeLista" class="list-group-item list-group-item-action">
+                <a href="product-info.html" id="itemDeLista" class="col-xs-12 col-md-6 col-lg-4 list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
