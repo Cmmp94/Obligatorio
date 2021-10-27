@@ -24,7 +24,7 @@ function confirmar(){
     document.getElementById("confirmar").setAttribute("hidden", "true");
     document.getElementById("cancelar").setAttribute("hidden", "true");
     noEditable();
-    alert("se cambio");
+    
 }
 
 function cancelar(){
