@@ -28,10 +28,7 @@
       }
     }
   </style>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/dropzone.css" rel="stylesheet">
-</head>
+  </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
@@ -89,26 +86,82 @@
 
       <div class="form-group row">
         <label for="metEnvio" class="col-sm-2 col-form-label">Método de envio</label>
-        <div class="col-sm-10">
+        <div class="m-auto col-sm-10">
           <select onchange="cargarFactura();" id="metEnvio" class="float-left m-auto form-select">
             <option selected value="1">Premium (2-5 días) - Costo del 15%</option>
             <option value="2">Express (5-8 días) - Costo del 7%</option>
             <option value="3">Standard (12 a 15 días) - Costo del 5%</option>
           </select>
         </div>
+        <div class="float-left ml-0 col-3 col-md-5 col-sm-7">
+        <label for="calle">Calle</label>
+        <input class="form-control" type="text" placeholder="Calle">  
+        <label for="numero">Nº de puerta</label>
+        <input class="form-control" type="text" placeholder="Número">  
+        <label for="esquina">Esquina</label>
+        <input class="form-control" type="text" placeholder="Esquina">  
+        <label for="pais">País</label>
+        <select class="form-control ">
+          <option value="1">Argentina</option>
+          <option value="2">Brasil</option>
+          <option value="3">Chile</option>
+          <option value="4">Colombia</option>
+          <option value="5">Ecuador</option>
+          <option selected value="6">Uruguay</option>
+          
+        </select>
+      </div>
       </div>
       
-      <div class="form-group row">
-        <label for="metPago" class="col-sm-2 m-auto col-form-label">Método de pago:</label>
-        <div class="col-sm-10">
-          <select id="metPago" class="m-auto form-select">
-            <option selected value="1">Crédito</option>
-            <option value="2">Transferencia bancaria</option>
-          </select>
+      <button class="mt-5 d-block btn btn-primary" data-toggle="modal" data-target="#modal_metodoPago">Método de pago</button>
+      
+      <div class="modal fade" id="modal_metodoPago" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Método de pago</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div class="modal-body">
+
+              <label for="metPago">Método de pago</label>
+              
+              <select onchange="updateMetPago();" class="form-control" id="metPago">
+                <option selected value="1">Transferencia bancaria</option>
+                <option value="2">Tarjeta de crédito</option>
+              </select>
+
+              <div id="inputCuenta" class="mt-2 float-left">
+                <label>Número de cuenta</label>
+                <input class="form-control" type="text" placeholder="Número de cuenta">
+              </div>
+
+              
+
+              <div hidden id="inputTarjeta" class="mt-2 float-left">
+                <label>Número de tarjeta</label>
+                <input class="form-control" type="text" placeholder="Número de cuenta">
+                <label>CVC</label>
+                <input class="form-control" type="number" size="3" placeholder="CVC">
+                <label>Vencimiento</label>
+                <input class="form-control" type="date" placeholder="CVC">         
+              </div>
+              
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" data-dismiss="modal" class="btn btn-primary">Confirmar</button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <button class="mt-2 d-block btn btn-primary">Finalizar compra</button>
+
+
+      <button class="mt-5 d-block btn btn-primary">Finalizar compra</button>
       
     </div>
 
@@ -126,6 +179,12 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+
 </body>
+
+
 
 </html>

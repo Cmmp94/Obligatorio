@@ -103,3 +103,17 @@ function calcularEnvio(){
     }   
 }
 
+function updateMetPago(){
+    let selectValue = document.getElementById("metPago").value;
+    let divTarj = document.getElementById("inputTarjeta");
+    let divCuenta = document.getElementById("inputCuenta");
+    if(selectValue == 1){
+        divTarj.setAttribute("hidden", false);
+        divCuenta.removeAttribute("hidden");
+    }
+    if(selectValue == 2){
+        divCuenta.setAttribute("hidden", false);
+        divTarj.removeAttribute("hidden");
+    }
+}
+

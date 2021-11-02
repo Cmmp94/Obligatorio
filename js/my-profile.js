@@ -13,13 +13,36 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 function confirmar(){
-    localStorage.setItem("primerNombre", JSON.stringify(document.getElementById("pNombre").value));
-    localStorage.setItem("segundoNombre", JSON.stringify(document.getElementById("sNombre").value));
-    localStorage.setItem("primerApellido", JSON.stringify(document.getElementById("pApellido").value));
-    localStorage.setItem("segundoApellido", JSON.stringify(document.getElementById("sApellido").value));
-    localStorage.setItem("edad", JSON.stringify(document.getElementById("edad").value));
-    localStorage.setItem("email", JSON.stringify(document.getElementById("email").value));
-    localStorage.setItem("tel", JSON.stringify(document.getElementById("tel").value));
+    if(document.getElementById("pNombre").value != ""){
+
+        localStorage.setItem("primerNombre", document.getElementById("pNombre").value);
+    }
+    if(document.getElementById("sNombre").value != ""){
+
+        localStorage.setItem("segundoNombre",document.getElementById("sNombre").value);
+    }
+    if(document.getElementById("pApellido").value != ""){
+
+        localStorage.setItem("primerApellido", document.getElementById("pApellido").value);
+    }
+    if(document.getElementById("sApellido").value != ""){
+
+        localStorage.setItem("segundoApellido", document.getElementById("sApellido").value);
+    }
+    if(document.getElementById("edad").value != ""){
+
+        localStorage.setItem("edad", document.getElementById("edad").value);
+    }
+    if(document.getElementById("email").value != ""){
+
+        localStorage.setItem("email", document.getElementById("email").value);
+    }
+    if(document.getElementById("tel").value != ""){
+
+        localStorage.setItem("tel", 
+        document.getElementById("tel").value);
+    }
+    
     document.getElementById("modificar").removeAttribute("hidden");
     document.getElementById("confirmar").setAttribute("hidden", "true");
     document.getElementById("cancelar").setAttribute("hidden", "true");
