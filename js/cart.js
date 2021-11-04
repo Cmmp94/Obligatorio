@@ -117,3 +117,32 @@ function updateMetPago(){
     }
 }
 
+function validarMetodoPago(){
+    let opt = document.getElementById("metPago");
+    if(opt == 1)
+    return (document.getElementById("nroCuenta") != "")
+    else
+    return (document.getElementById("nroTarjeta") != "" &&
+    document.getElementById("cvc" != "") &&
+    document.getElementById("vencimiento" != ""))
+}
+
+function validarFormulario(){
+    return(
+    (document.getElementById("calle")!="")
+    && 
+    (document.getElementById("numero") != "" || document.getElementById("esquina")!="")
+    )
+}
+
+function validarCompra(){
+    return validarFormulario() && validarMetodoPago();
+}
+
+function finalizarCompra(){
+    if(!validarCompra){
+        alert("Faltan datos weyy");
+    }else{
+        alert("Crack");
+    }
+}

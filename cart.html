@@ -95,11 +95,11 @@
         </div>
         <div class="float-left ml-0 col-3 col-md-5 col-sm-7">
         <label for="calle">Calle</label>
-        <input class="form-control" type="text" placeholder="Calle">  
+        <input id="calle" class="form-control" type="text" placeholder="Calle">  
         <label for="numero">Nº de puerta</label>
-        <input class="form-control" type="text" placeholder="Número">  
+        <input id="numero" class="form-control" type="text" placeholder="Número">  
         <label for="esquina">Esquina</label>
-        <input class="form-control" type="text" placeholder="Esquina">  
+        <input id="esquina" class="form-control" type="text" placeholder="Esquina">  
         <label for="pais">País</label>
         <select class="form-control ">
           <option value="1">Argentina</option>
@@ -136,18 +136,18 @@
 
               <div id="inputCuenta" class="mt-2 float-left">
                 <label>Número de cuenta</label>
-                <input class="form-control" type="text" placeholder="Número de cuenta">
+                <input id="nroCuenta" class="form-control" type="text" placeholder="Número de cuenta">
               </div>
 
               
 
               <div hidden id="inputTarjeta" class="mt-2 float-left">
                 <label>Número de tarjeta</label>
-                <input class="form-control" type="text" placeholder="Número de cuenta">
+                <input id="nroTarjeta" class="form-control" type="text" placeholder="Número de tarjeta">
                 <label>CVC</label>
-                <input class="form-control" type="number" size="3" placeholder="CVC">
+                <input id="cvc" class="form-control" type="number" size="3" placeholder="CVC">
                 <label>Vencimiento</label>
-                <input class="form-control" type="date" placeholder="CVC">         
+                <input id="vencimiento" class="form-control" type="date" placeholder="CVC">         
               </div>
               
             </div>
@@ -161,7 +161,7 @@
 
 
 
-      <button class="mt-5 d-block btn btn-primary">Finalizar compra</button>
+      <button onclick="finalizarCompra()" class="mt-5 d-block btn btn-primary">Finalizar compra</button>
       
     </div>
 
