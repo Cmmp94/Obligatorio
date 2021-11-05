@@ -117,32 +117,51 @@ function updateMetPago(){
     }
 }
 
-function validarMetodoPago(){
-    let opt = document.getElementById("metPago");
-    if(opt == 1)
-    return (document.getElementById("nroCuenta") != "")
-    else
-    return (document.getElementById("nroTarjeta") != "" &&
-    document.getElementById("cvc" != "") &&
-    document.getElementById("vencimiento" != ""))
-}
 
-function validarFormulario(){
-    return(
-    (document.getElementById("calle")!="")
-    && 
-    (document.getElementById("numero") != "" || document.getElementById("esquina")!="")
-    )
-}
-
-function validarCompra(){
-    return validarFormulario() && validarMetodoPago();
-}
-
-function finalizarCompra(){
-    if(!validarCompra){
-        alert("Faltan datos weyy");
+function validarEnvío(){
+    let calle = document.getElementById("calle").value;
+    let numero = document.getElementById("numero").value;
+    let esquina = document.getElementById("esquina").value;
+    if(calle != "" && numero != "" && esquina != ""){
+        return true;
     }else{
-        alert("Crack");
+        return false;
     }
 }
+
+function validarPago(){
+    let opt = document.getElementById("metPago").value;
+    let resultadoPago;
+    if(opt == 1){//Chequear transf bancaria
+        if(document.getElementById("nroCuenta").value != ""){
+            resultadoPago = true;
+        }else{
+            resultadoPago = false;
+        }    
+    }else{//Chequear tarj crédito
+        if(document.getElementById("nroTarjeta").value != "" &&
+        document.getElementById("cvc").value != "" &&
+        document.getElementById("vencimiento").value != ""){
+            resultadoPago = true;
+        }else{
+        resultadoPago = false;
+        }
+    }
+    return resultadoPago;
+}
+
+
+function finalizarCompra(){
+    let v1 = validarPago();
+    let v2 = validarEnvío();
+    if(v1 && v2){
+       //REDIRIGIR A ALGUN LADO 
+       return true;
+    }else{
+        //MOSTRAR DONDE FALLA
+       return false;
+   }
+}
+        
+ 
+
