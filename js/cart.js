@@ -152,13 +152,27 @@ function validarPago(){
 
 
 function finalizarCompra(){
+    document.getElementById("alerta").setAttribute("hidden", true);
+    document.getElementById("alertaEnvio").setAttribute("hidden", true);
+    document.getElementById("alertaPago").setAttribute("hidden", true);
     let v1 = validarPago();
     let v2 = validarEnvío();
     if(v1 && v2){
-       //REDIRIGIR A ALGUN LADO 
+       document.getElementById("exito").removeAttribute("hidden", true);
+       setTimeout(() => {
+          window.location.href = "inicio.html"; 
+       }, 4500);
        return true;
     }else{
-        //MOSTRAR DONDE FALLA
+        document.getElementById("alerta").removeAttribute("hidden");
+        if(!v1){
+        document.getElementById("alertaPago").removeAttribute("hidden");
+        }
+            
+        if(!v2){
+            document.getElementById("alertaEnvio").removeAttribute("hidden");
+        }
+        
        return false;
    }
 }
