@@ -2,14 +2,14 @@
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
-const CART_URL = "https://japdevdep.github.io/ecommerce-api/cart/654.json";
+
 
 let contenedor = document.getElementById("contenedorCarrito");
 let carrito = [];
 let i = 0;
 
 document.addEventListener("DOMContentLoaded", function(e){
-    fetch(CART_URL)
+    fetch(CART_INFO_URL)
     .then(response => response.json())
     .then(datos =>{
 
